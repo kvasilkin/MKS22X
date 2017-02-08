@@ -1,0 +1,19 @@
+public class Recursion{
+    //returns name
+ public static String name(){
+     return	 "Vasilkin,Katherine";};
+
+    //calls helper function
+    public static double sqrt(double n){
+	if(n < 0){throw new  IllegalArgumentException}
+	return helper(n, n/2);
+    };
+   
+    //helper function
+    public static double helper(double n, double guess){
+	if(n < 0){}
+	if(abs(guess * 2 - n) / n <= .00000000001){
+	    return guess;}
+
+    }
+}
