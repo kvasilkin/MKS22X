@@ -25,9 +25,14 @@ public class QueenBoard{
 	    board[w][c] ++;}
 	for(int m = 0; m < size -1; m ++ ){
 	    board[r][m] ++;}
+	while()
 
 
 	board[r][c] = -1;}
+
+
+
+
     public void removeQueen(int r, int c){
 for(int w = 0; w < size -1; w ++ ){
 	    board[w][c] --;}
@@ -38,7 +43,7 @@ for(int w = 0; w < size -1; w ++ ){
 	board[r][c] = 0;}
 
 }
-    public boolean solve()
+    public void solve()
     {
 	return solveH(0);
     }
@@ -51,8 +56,8 @@ for(int w = 0; w < size -1; w ++ ){
      *@return the number of solutions found, or -1 if the board was never solved.
      *The board should be reset after this is run.    
      */
-    public int getSolutionCount(){
-    	return -1;
+    public void  getSolutionCount(){
+       solutionCount = 0 ;
     }
     /**toString
      *and all nunbers that represent queens are replaced with 'Q' 
