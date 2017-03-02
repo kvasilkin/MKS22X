@@ -1,6 +1,8 @@
 import java.util.*;
 import java.io.*;
-
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 public class Maze{
 
     private char[][]maze;
@@ -17,8 +19,38 @@ public class Maze{
       3. When the file is not found OR there is no E or S then: print an error and exit the program.
     */
     public Maze(String filename){
-        //COMPLETE CONSTRUCTOR
+	public Maze(String fileName){
+
+
+	try{  Scanner sc = new Scanner(new File(fileName));
+	try{  	while(sc.hasNext()){
+		for()
+
+
+ }}
+	    catch(NoSuchElementException e){
+	    }
+
     }
+
+ catch (FileNotFoundException e){
+        	System.out.println("File Does Not Exist");
+        	System.exit(1);
+ }
+ 
+									     
+    }
+    } 
+
+  File text = new File("Maze.txt");// can be a path"/full/path/to/file.txt" 
+        Scanner inf = new Scanner(text);
+        int lineNumber = 1;
+        while(inf.hasNextLine()){
+            String line = inf.nextLine();
+            System.out.println(line);
+        }       
+    }   
+
     
     private void wait(int millis){ //ADDED SORRY!
          try {
