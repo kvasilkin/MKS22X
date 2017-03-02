@@ -58,41 +58,40 @@ counter++;
 
 
 
-/**    public void removeQueen(int r, int c){
-for(int w = 0; w < size -1; w ++ ){
+  public void removeQueen(int r, int c){
+  int counter = 0;
+for(int w = 0; w < board.length; w ++ ){
         board[w][c] --;}
-    for(int m = 0; m < size -1; m ++ ){
+    for(int m = 0; m < board.length; m ++ ){
         board[r][m] --;}
-
+ boolean willAdd = true;
 while(willAdd){
         willAdd = false; 
-        if (r - counter != 0 && c - counter != 0){
+        if (r - counter > -1 && c - counter > -1){
         board[r - counter][c - counter ]--;
         willAdd = true;
                 }
-        if(r - counter != 0 && c + counter != board.length()){
+        if(r - counter > -1  && c + counter != board.length){
         board[r - counter][c + counter]--;
                 willAdd = true;
                 }
-        if(r + counter != board.length() && c + counter != board.length()){
+        if(r + counter != board.length && c + counter != board.length){
         board[r + counter][c + counter]--;      
                 willAdd = true;
                 }
-        if(r + counter != board.length() && c - counter != 0){        
+        if(r + counter != board.length && c - counter > -1){        
         board[r + counter][c - counter]--;
               willAdd = true;
           }
-
 counter++;
     }
     board[r][c] = 0;}
-*/
+    
 
   /**  public void solve()
     {
     return solveH(0);
     }
-
     private boolean solveH(int col){
     return false;
     }
@@ -131,11 +130,12 @@ counter++;
     public static void main(String[] args){
 QueenBoard bord = new QueenBoard(9);
 bord.addQueen(4,4);
-bord.addQueen(5,5);
+bord.addQueen(0,1);
+bord.removeQueen(4,4);
+
 System.out.println(bord);
         
-       // addQueen(5, 6);
-     //  System.out.println(Arrays.deepToString(board));
+      
      }
 
 }
