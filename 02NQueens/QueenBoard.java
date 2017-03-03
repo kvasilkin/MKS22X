@@ -1,7 +1,7 @@
 public class QueenBoard{
     private int[][]board;
     private int solutionCount;
-    //private int blength; 
+    private int queens = 0; 
 
 
     public QueenBoard(int size){
@@ -25,6 +25,7 @@ public class QueenBoard{
 
   public  void  addQueen(int r, int c) {
     int counter = 0;
+    queens ++;
     for(int w = 0; w < board.length ; w ++ ){
         board[w][c] ++;}
     for(int m = 0; m < board.length ; m ++ ){
@@ -60,6 +61,7 @@ counter++;
 
   public void removeQueen(int r, int c){
   int counter = 0;
+  queens --;
 for(int w = 0; w < board.length; w ++ ){
         board[w][c] --;}
     for(int m = 0; m < board.length; m ++ ){
@@ -88,14 +90,28 @@ counter++;
     board[r][c] = 0;}
     
 
-  /**  public void solve()
-    {
-    return solveH(0);
-    }
+    public void solve(){
+	return solveH(0);    
+}
     private boolean solveH(int col){
-    return false;
+	if (col >= board.length){
+	    if(queens == board.length){
+		return true;}
+	    else{return false;}
+	    else{
+		for(int row = 0; row < board.length; row ++){
+		    if (board[row][col] == 0){
+			addQueen(row,col);
+			return  solveH(c+1);}
+else
+}
+}
+
+}
+
+}
     }
-*/
+  
     /**
      *@return the number of solutions found, or -1 if the board was never solved.
      *The board should be reset after this is run.    
