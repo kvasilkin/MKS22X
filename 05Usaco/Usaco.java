@@ -2,10 +2,10 @@ import java.util.*;
 import java.io.*; 
 
 public class Usaco{
-    private int[][] field;  
-    private static ArrayList<int> R_s = new ArrayList<int>(); 
-private static ArrayList<int> C_s = new ArrayList<int>(); 
-private static ArrayList<int> D_s = new ArrayList<int>(); 
+    private static int[][] field;  
+    private static ArrayList<Integer> R_s = new ArrayList<Integer>(); 
+private static ArrayList<Integer> C_s = new ArrayList<Integer>(); 
+private static ArrayList<Integer> D_s = new ArrayList<Integer>(); 
     private static int volume;
     private static int R;
     private static int C;
@@ -14,7 +14,7 @@ private static ArrayList<int> D_s = new ArrayList<int>();
 
 
 
-    public int Bronze (String fileName){
+    public static int Bronze (String fileName){
 	 
 	try{  Scanner text = new  Scanner(new File(fileName));
 	    R = text.nextInt(); 
@@ -37,16 +37,22 @@ private static ArrayList<int> D_s = new ArrayList<int>();
 
 	     } //end count while
 
-	     while (text.hasNext()){
-	    R_s.add((text.next()));
-  C_s.add((text.next()));
-  D_s.add((text.next()));
-}}
+	   try{  while (text.hasNextInt()){
+	    R_s.add((text.nextInt()));
+  C_s.add((text.nextInt()));
+  D_s.add((text.nextInt()));
+}
+}
+
+  catch(NoSuchElementException e){
+	    }
+
+
  catch (FileNotFoundException e){
         	System.out.println("File Does Not Exist");
         	System.exit(1);
  }
-return 4;}
+return 4;}}
 
 
     public void  stomper (int r, int c, int depth){
