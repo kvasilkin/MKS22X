@@ -1,17 +1,20 @@
-public class MakeLake{
+import java.util.*; 
+import java.io.*; 
+
+public class Usaco{
     private int[][] field;  
-    private static ArrayList<Int> R_s = new ArrayList<Int>(); 
-private static ArrayList<Int> C_s = new ArrayList<Int>(); 
-private static ArrayList<Int> D_s = new ArrayList<Int>(); 
-    private int volume;
-    private int R;
-    private int C;
-    private int E;
-    private int N;
+    private static ArrayList<int> R_s = new ArrayList<int>(); 
+private static ArrayList<int> C_s = new ArrayList<int>(); 
+private static ArrayList<int> D_s = new ArrayList<int>(); 
+    private static int volume;
+    private static int R;
+    private static int C;
+    private static int E;
+    private static int N;
 
 
 
-    public Broze (String fileName){
+    public int Bronze (String fileName){
 	 
 	try{  Scanner text = new  Scanner(new File(fileName));
 	    R = text.nextInt(); 
@@ -38,13 +41,26 @@ private static ArrayList<Int> D_s = new ArrayList<Int>();
 	    R_s.add((text.next()));
   C_s.add((text.next()));
   D_s.add((text.next()));
-}
+}}
  catch (FileNotFoundException e){
         	System.out.println("File Does Not Exist");
         	System.exit(1);
  }
+return 4;}
+
+
+    public void  stomper (int r, int c, int depth){
+    	volume = r * c * depth;
+    } 
+ public static void main(String[] args) {
+Bronze("input.txt");
+ 	System.out.println(R);
+ 	System.out.println(C);
+ 	System.out.println(E);
+ 	System.out.println(N);
+ 	System.out.println(field);
+ 	System.out.println(R_s);
+ 	System.out.println(C_s);
+ 	System.out.println(D_s);
 }
-
-
-    public void  stomper (int r, int c, int depth){} 
 }
