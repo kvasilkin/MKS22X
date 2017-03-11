@@ -23,44 +23,35 @@ public class Usaco{
 	    E = text.nextInt(); 
 	    N = text.nextInt(); 
 	     field = new int[R][C];
-	     int count = 0;
-	     while (count < R){ 
-	    while (text.hasNextLine()) {
-		for(int row = 0; row < R; row ++ )
-		    {	count ++; 
+	 
+	 
+      	for(int row = 0; row < R; row ++ )
+		    {	
 	for(int col = 0; col < C; col++){
-	    field[row][col] = text.nextInt();}
+	    field[row][col] = text.nextInt();}}
 
-		} //end for
+        
+ for(int i = 0; i < N; i++){
+	    R_s = text.nextInt();
+        C_s = text.nextInt();
+        D_s = text.nextInt();
+stomper(R_s, C_s, D_s);}}
+	   
 
-
-	    }//end adding while
-
-	     } //end count while
-
-	   try{  for(int i = 0; i < n; i++)
-	    R_s = text.nextInt;
-        C_s = text.nextInt;
-        D_s = text.nextInt;
-stomper(R_s, C_s, D_s);
-}
-
-  catch(NoSuchElementException e){
-	    }
 
 
  catch (FileNotFoundException e){
         	System.out.println("File Does Not Exist");
         	System.exit(1);
  }
-return Volume;}}
+return Volume;}
 
 
-    public void  stomper (int r, int c, int depth){
-    	volume = r * c * depth;
+    public static void  stomper (int r, int c, int depth){
+    	Volume = r * c * depth;
     } 
  public static void main(String[] args) {
-Bronze br = Bronze("input.txt");
+Bronze("input.txt");
  	System.out.println(R);
  	System.out.println(C);
  	System.out.println(E);
