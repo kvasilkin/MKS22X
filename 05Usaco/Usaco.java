@@ -16,7 +16,7 @@ public class Usaco{
 
 
     public static int Bronze (String fileName){
-	 
+	 Volume = 0;
 	try{  Scanner text = new  Scanner(new File(fileName));
 	    R = text.nextInt(); 
 	    C = text.nextInt();
@@ -48,7 +48,7 @@ return Volume;}
 
 
     public static void  stomper (int r, int c, int depth){
-    	Volume = r * c * depth;
+    	Volume += r * c * depth;
     } 
  public static void main(String[] args) {
 Bronze("input.txt");
@@ -56,9 +56,9 @@ Bronze("input.txt");
  	System.out.println(C);
  	System.out.println(E);
  	System.out.println(N);
- 	System.out.println(field);
  	System.out.println(R_s);
  	System.out.println(C_s);
  	System.out.println(D_s);
+	System.out.println(Volume);
 }
 }
