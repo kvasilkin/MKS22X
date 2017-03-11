@@ -3,14 +3,15 @@ import java.io.*;
 
 public class Usaco{
     private static int[][] field;  
-    private static ArrayList<Integer> R_s = new ArrayList<Integer>(); 
-private static ArrayList<Integer> C_s = new ArrayList<Integer>(); 
-private static ArrayList<Integer> D_s = new ArrayList<Integer>(); 
-    private static int volume;
+	private static int Volume;
     private static int R;
     private static int C;
     private static int E;
     private static int N;
+    private static int R_s;
+	private static int C_s;
+	private static int D_s;
+
 
 
 
@@ -37,11 +38,11 @@ private static ArrayList<Integer> D_s = new ArrayList<Integer>();
 
 	     } //end count while
 
-	   try{  while (text.hasNextInt()){
-	    R_s.add((text.nextInt()));
-  C_s.add((text.nextInt()));
-  D_s.add((text.nextInt()));
-}
+	   try{  for(int i = 0; i < n; i++)
+	    R_s = text.nextInt;
+        C_s = text.nextInt;
+        D_s = text.nextInt;
+stomper(R_s, C_s, D_s);
 }
 
   catch(NoSuchElementException e){
@@ -52,14 +53,14 @@ private static ArrayList<Integer> D_s = new ArrayList<Integer>();
         	System.out.println("File Does Not Exist");
         	System.exit(1);
  }
-return 4;}}
+return Volume;}}
 
 
     public void  stomper (int r, int c, int depth){
     	volume = r * c * depth;
     } 
  public static void main(String[] args) {
-Bronze("input.txt");
+Bronze br = Bronze("input.txt");
  	System.out.println(R);
  	System.out.println(C);
  	System.out.println(E);
