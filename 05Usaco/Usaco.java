@@ -65,11 +65,17 @@ int max = maxer( r, c);
 for (int i = 0; i < 3 ; i++){
 			for(int j = 0; j < 3; j ++ ){
 				if (( r + i  > -1) && (r + i < R) && (c + j > -1) &&( c + j < C )){
-					field [r + i][c  + j] = (field[r + i][c + j] -  (depth - (max - field [r + i][c + j])));
+					if (max - field[r + i ][c + j] <= D_s ){
 
+						field [r + i][c  + j] = (field[r + i][c + j] -  (depth - (max - field [r + i][c + j])));
+}
 
 					}
-			}}}
+			}}
+
+
+
+		}
 
 
 
