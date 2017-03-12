@@ -7,16 +7,34 @@ public class Quiz2Redux{
    */
   public static ArrayList<String> combinations(String s){
       ArrayList<String>words = new ArrayList<String>();
-      help( words , /*fill this in with more */);
+      words.add(" ");
+      help( words , 0, s );
       Collections.sort(words);
       return words;
   }
   
-  private static void help( ArrayList<String> words, 
-                             /*fill this in with more arguments*/ ){
-   /*METHOD TO BE WRITTEN BY YOU.*/ 
+  private static void help( ArrayList<String> word, int ind , String s){
+    int len = word.size();
+    if(ind > s.length()){
+      word.add(" ");
+    }
+    else {
+      for (int i = 0; i < len; i++){
+word.add(word.get(i) + s.charAt(ind) );
+
+      }
+      help(word, ind ++, s);
+
+    }
+    
   }
+
+
+     public static void main(String[] args) {
+        
+      System.out.println(combinations("fuc"));
+    
+
+  
+    }
 }
-
-
-
