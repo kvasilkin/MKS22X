@@ -1,6 +1,6 @@
 		import java.util.*; 
 		import java.io.*; 
-
+//Partner: Asim Kapparova
 		public class Usaco{
 		 
 
@@ -53,15 +53,22 @@
 		        	System.out.println("File Does Not Exist");
 		        	System.exit(1);
 		 }
+
+
+for (int k = 0; k < R; k ++){
+        for (int j = 0; j < C; j ++){
+        	if (field[k][j] < E) {
+Volume += E - field[k][j];
+        	}
+		}
+	}
+		Volume = Volume * 72 * 72;
 		return Volume;}
 
 
 		    public static void  stomper (int r, int c, int depth){
 int max = maxer( r, c);
-/**for (int i = r- 1; i < r + 2 ; i++){
-			for(int j = c - 1; j < c + 2; j ++ ){
-				field [r + i]][r  + j] = field[r + i]][j+ j] -  (depth - (max - field [i]][j]));}
-			} */
+
 for (int i = 0; i < 3 ; i++){
 			for(int j = 0; j < 3; j ++ ){
 				if (( r + i  > -1) && (r + i < R) && (c + j > -1) &&( c + j < C )){
@@ -73,9 +80,7 @@ for (int i = 0; i < 3 ; i++){
 					}
 			}}
 
-
-
-		}
+}
 
 
 
@@ -112,16 +117,10 @@ for (int i = 0; i < 3 ; i++){
 
 
 		 public static void main(String[] args) {
-		Bronze("input.txt");
-		 	System.out.println(R);
-		 	System.out.println(C);
-		 	System.out.println(E);
-		 	System.out.println(N);
-		 	System.out.println(R_s);
-		 	System.out.println(C_s);
-		 	System.out.println(D_s);
+		Bronze("input2.txt");
+		 	
 			System.out.println(Volume);
-			System.out.println(printer(field));
+		
 
 	
 		}
