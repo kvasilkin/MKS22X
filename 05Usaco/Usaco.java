@@ -117,7 +117,7 @@ for (int i = 0; i < 3 ; i++){
 
 
 		 public static void main(String[] args) {
-		Bronze("input2.txt");
+		Bronze("makelake.5.in");
 		 	
 			System.out.println(Volume);
 		
