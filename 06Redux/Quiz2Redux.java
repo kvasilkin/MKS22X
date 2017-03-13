@@ -5,8 +5,9 @@ public class Quiz2Redux{
    *the characters should appear in the same order that they occur 
    *in the original string.
    */
+private static  ArrayList<String>words = new ArrayList<String>();
   public static ArrayList<String> combinations(String s){
-      ArrayList<String>words = new ArrayList<String>();
+      
       words.add(" ");
       help( words , 0, s );
       Collections.sort(words);
@@ -15,24 +16,23 @@ public class Quiz2Redux{
   
   private static void help( ArrayList<String> word, int ind , String s){
     int len = word.size();
-    if(ind > s.length()){
-      word.add(" ");
+    if(ind > s.length() - 1){
+      words = word;
     }
     else {
       for (int i = 0; i < len; i++){
-word.add(word.get(i) + s.charAt(ind) );
+word.add(word.get(i) + s.charAt(ind));
 
       }
-      help(word, ind ++, s);
-
+      help(word, ind + 1, s);
     }
     
   }
 
 
      public static void main(String[] args) {
-        
-      System.out.println(combinations("fuc"));
+      combinations("fuc");  
+      System.out.println(words);
     
 
   
