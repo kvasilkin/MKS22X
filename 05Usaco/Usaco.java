@@ -2,7 +2,7 @@
 		import java.io.*; 
 //Partner: Asim Kapparova
 		public class Usaco{
-		 
+
 
 //Bronze
 		    private static int[][] field;  
@@ -15,6 +15,15 @@
 			private static int C_s;
 			private static int D_s;
 // Silver
+private static int[][] pasture;
+private static int row;
+private static int col;
+private static int sec;
+private static int cx1;
+private static int cx2;
+private static int cy1;
+private static int cy2;
+
 
 //private static int R1; 
 //private static int C1; 
@@ -101,7 +110,7 @@ for (int i = 0; i < 3 ; i++){
 		}
 
 
- public static String printer(int [][] ass ){
+ public static String printerB(int [][] f ){
     String result = "";
     for (int k = 0; k < R; k ++){
         for (int j = 0; j < C; j ++){
@@ -115,12 +124,81 @@ for (int i = 0; i < 3 ; i++){
    return result; }
 
 
+ public static String printerS(int [][] f ){
+    String result = "";
+    for (int k = 0; k < row; k ++){
+        for (int j = 0; j < col; j ++){
+            
+                result += pasture [k][j] + " ";
+           
+            }
+        
+        result += '\n';
+    }
+   return result; }
+
+
+public static int Silver (String fileName){
+	try{  Scanner text = new  Scanner(new File(fileName));
+			    row = text.nextInt(); 
+			    col = text.nextInt();
+			    sec = text.nextInt(); 
+			    
+			     pasture  = new int[row][col];
+			 
+			 
+		      	for(int r = 0; r < row ; r ++ )
+				    {	String  inputS = text.next();
+			for(int c = 0; c < col ; c++){
+			   
+if (inputS.charAt(c) == '*'){
+
+	pasture[r][c] = -1;
+			    
+			    }
+
+
+
+			}}
+
+		        
+		 
+			    cx1 = text.nextInt();
+		        cy1 = text.nextInt();
+		        cx2 = text.nextInt();
+		        cy2 = text.nextInt();
+		
+		  
+	}
+
+			   
+
+
+
+		 catch (FileNotFoundException e){
+		        	System.out.println("File Does Not Exist");
+		        	System.exit(1);
+		 }
+
+return cy2;}
+
+
+
+
+
+
+
+
+
+
+
 
 		 public static void main(String[] args) {
-		Bronze("makelake.5.in");
-		 	
-			System.out.println(Volume);
-		
+		//Bronze("makelake.5.in");	
+			//System.out.println(Volume);
+Silver("field1.txt");
+System.out.println(printerS(pasture));	
+
 
 	
 		}
