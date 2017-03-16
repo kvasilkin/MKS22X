@@ -9,30 +9,45 @@ public static int[] ex = {7, 1 ,2 ,3,2, 4, 8, 11, 12, 1212, 56454, 3434, 9, 6, 5
 	int 	 ind = new Random().nextInt(end - start);	
 		int num = input[ind];
 		int temp = 0;
+		int [] hold = new int [(end - start) + 1];
 		//	int beg = start;
 		//	int fin = end;
 	for (int i = start; i < end; i++){
 	    if ( i != ind){
 		if(input[i] < num){
-		    temp = input[end];
-		    input[end] = input[start];
-		    input[start] = temp;
-		    start ++;
+		    hold[start] = input[i];
+		    start++;
+
+
+
+	    // temp = input[end];
+		    //input[end] = input[start];
+		    //input[start] = temp;
+		    //start ++;
 }
 
-	if(input[i] > num){
-	temp = input[end];
-		    input[end] = input[start];
-		    input[start] = temp;	
-	end --;
+	else{
+	    hold [end - i] =  input[i];
+	    end --;
+
+
+
+ //	temp = input[end];
+	    //		    input[end] = input[start];
+	    //		    input[start] = temp;	
+
 	}
-	}
+
+	    }
 
 
 
 	}
-	
-	return input[ind];}
+	for (int i = 0; i < hold.length; i++){
+	    input[start + i ] = hold[i];
+	}
+		hold[start] = input[ind];
+	return start;}
 
 		 public static void main(String[] args) {
 		  
