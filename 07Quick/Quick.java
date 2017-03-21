@@ -17,11 +17,12 @@ public static int[] ex = {7, 1 ,2 ,3,2, 4, 8, 11, 12, 1212, 56454, 3434, 9, 6, 5
 	    if (start == end){return start;}
 
 	    if (input[i] > check){
-		swap(input, big, i);
-		big --;
+		swap(input, gt, i);
+		gt ++;
 }
 	    if (input [i] == check){
 		swap(input,lt, i  );
+		lt ++ ;
 }
 
 }
