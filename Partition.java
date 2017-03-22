@@ -1,37 +1,46 @@
+
 		import java.util.*; 
 		import java.io.*; 
 	public class Partition {
-public static int[] ex = {7, 1 ,2 ,3,2, 4, 5, 4, 8, 11, 12, 1212, 56454, 3434, 9, 6, 5};
-public static int[] result;
+public static int[] ex = {8,9,10,11, 12, 13,14,15,0,1, 2,3, 4,5, 6,7};
+	 
 
-	public static int [] Part (int [] input, int ind){
-	result = new int[input.length];
-	int big = input.length - 1;
-	int small = 0;
-	int num = input[ind];
-	for (int i = 0; i < result.length; i++){
-	if ( i != ind){
-	if(input[i] < num){
-		result[small] = input[i];
-	small ++; }
+	    public static int  Part (int [] input, int start, int end){
+	if (start == end) {
 
-	if(input[i] > num){
-		result[big] = input[i];
+		return start;} 
+	int ind = new Random().nextInt(end - start + 1) + start;	
+	swap(input, start, ind);
+	int small = start;
+	int big = end;
+	for (int i = start; i < end ; i++){
+if (input[i] > input[start]){
+	swap(input, i, big);
 	big --;
-	}
-	}
+}
 
 
 
 	}
+swap (input, start, small);
 
-	result[small] = input[ind];
-return result;}
+	return input [small]; }
+
+
+public static void  swap (int [] arr, int num1, int num2){
+	int hold = arr[num1]; 
+	arr[num1] = arr[num2];
+	arr[num2] = hold;
+
+
+}
+
+
 
 		 public static void main(String[] args) {
-		 	Part (ex, 0);
-		System.out.println(Arrays.toString(result));
-
-	
+		  
+		    
+		     System.out.println(Part(ex, 0, 14));
+	System.out.println(Arrays.toString(ex));
 		}
 	}
