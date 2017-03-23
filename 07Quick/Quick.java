@@ -1,32 +1,35 @@
 
 		import java.util.*; 
 		import java.io.*; 
-	public class Quick.java {
-public static int[] ex = {7, 1 ,2 ,3,2, 4, 8, 11, 12, 1212, 56454, 3434, 9, 6, 5};
-	 
+	public class Quick {
+
+	 public  static int [] ex;
 
 	    public static int  Part (int [] input, int start, int end){
-	int 	 ind = new Random().nextInt(end - start);	
-	int small = start + 1;
-	int big = end;
-	int lt = start + 1;
+	int 	 ind = start + new Random().nextInt(end - start);	
+	int lt = start ;
 	int gt = end;
 	int check = input [ind];
-	swap(input, ind ,lt);
-	for (i = start + 1; i < end; i++){
-	    if (start == end){return start;}
-
-	    if (input[i] > check){
-		swap(input, gt, i);
-		gt ++;
-}
-	    if (input [i] == check){
-		swap(input,lt, i  );
-		lt ++ ;
+	int i = start;
+while (i < gt){
+if (input[i] == check ){
+			i ++;
+						}
+else if  (input[i] < check){
+	swap (input, i, lt);
+	lt++;
+	i++;
 }
 
+else {
+	swap (input, i, gt);
+	gt--;
 }
+
+	
+
 	}
+return ind;}
 	    public static void swap (int  [] arr, int i, int j){
 		int hold = arr[i];
 		arr[i] = arr[j];
@@ -35,9 +38,13 @@ public static int[] ex = {7, 1 ,2 ,3,2, 4, 8, 11, 12, 1212, 56454, 3434, 9, 6, 5
 
 
 		 public static void main(String[] args) {
-		  
+		  int len = 20;
+		  ex = new int [len];
+		  for (int i = 0; i < len - 1; i ++){
+ex [i] = new Random().nextInt(5);	
+		  }
 		    
-		     System.out.println(Part(ex, 0, 10));
+		     System.out.println(Part(ex, 0, len -1 ));
 	System.out.println(Arrays.toString(ex));
 		}
 	}
