@@ -17,7 +17,19 @@ public static void mergesort(int []ary){   //not enough parameters
 	       l++;
 
 	   }
-
+	   if(a[i] > b[j] ){
+	       destination[l] = b[j];
+	       j++;
+	       l++;
+	   }
+	   if(a[i] == b[j]){
+	       destination[l] = a[i];
+	       l++;
+	       i++;
+	       destination[l] = b[j];
+	       l++;
+	       j++;
+}
 }
 
 
