@@ -33,16 +33,18 @@ public class Merge{
 		destination[l] = b[j];
 		l++;
 		j++;
-	    }
-	    if(a.length > b.length){
-		for(int k = a.length  - b.length - 1; k < a.length; k++){
+	    }}
+	      if(a.length > b.length){
+		for(int k = b.length; k < a.length; k++){
 		    destination[l] = a[k];
 		}}
 	
     if(b.length > a.length){
-		for(int k = b.length  - a.length - 1 ; k < b.length; k++){
-		    destination[l] = b[k];}}
-	}
+		for(int k =  a.length; k < b.length; k++){
+		destination[l] = b[k];}}
+
+
+	
 
     }
 
