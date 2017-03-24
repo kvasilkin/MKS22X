@@ -57,14 +57,38 @@ return input[k];
 
 
 public static void quicksort(int[] input){
-	sorter(input, 0, input.length);
+	sorter(input, 0, input.length - 1 );
 }
 
-public static void sorter(int[] input, int min, int max){
+public static void sorter(int[] input, int start, int end){
+		int ind = start + new Random().nextInt(end - start);
+		int lt = start ;
+		int gt = end ;
+		int check = input [ind];
+		int i = start + 1;
+		swap(input, lt, ind);
+	while (i <= gt){
+	if (input[i] == check ){
+				i ++;
+							}
+	else if  (input[i] < check){
+		swap (input, i, lt);
+		lt++;
+		i++;
+	}
 
+	else {
+		swap (input, i, gt);
+		gt--;
+		
+	}
 
+if (start + 1 < lt ){
+sorter(input, start, lt - 1 );}
+if(end >  gt + 1 ){
+sorter(input, gt + 1 , end);}
 
-}
+}}
 
 		    public static void swap (int  [] arr, int i, int j){
 			int hold = arr[i];
@@ -86,7 +110,7 @@ public static void sorter(int[] input, int min, int max){
 	//	System.out.println(Arrays.toString(ex)); */
 
 
-		int[]ary = { 2, 10, 15, 23, 0,  5};
+	/**	int[]ary = { 2, 10, 15, 23, 0,  5};
 
 System.out.println (quickselect( ary , 0 )); //would return 0
 System.out.println(Arrays.toString(ary)); 
@@ -99,5 +123,11 @@ System.out.println(Arrays.toString(ary));
 System.out.println (quickselect( ary , 4 ));  //would return 15
 System.out.println(Arrays.toString(ary)); 
 System.out.println (quickselect( ary , 5 ));  //would return 23
-			}
+		*/
+
+
+	int[] ary = {9,8,8,8,7,7,7,6,5,4,4,4,3,2,1,1,1,0};
+	System.out.println(quickselect(ary,2));
+      quicksort(ary);
+	System.out.println(Arrays.toString(ary)); 		}
 		}
