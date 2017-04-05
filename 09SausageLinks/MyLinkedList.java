@@ -23,17 +23,47 @@ public class MyLinkedList{
   }
 
     
-  private LNode getNthNode(int n){/*complete this*/}
+  private LNode getNthNode(int n){
+
+
+
+
+}
 
   private void addAfter(LNode location, LNode toBeAdded){/*complete this*/  }
 
   private void remove(LNode target){/*complete this*/}
 
-  public String toString(){ /*complete this*/  }
+  public String toString(){ 
+      String result = "["  
+	  LNode curr = head;
+	  for(int i = 0; i < size; i++ ){
+	      result += curr.toString;
+	      curr = curr.next;
+}
+	  result += "]"
+}
 
-  public boolean add(int value){  /*complete this*/ }
+  public boolean add(int value){  
+      size ++;
+      LNode val = new LNode;
+      val.value = value;
+      val.prev = tail;
+      tail.next = LNode;
+      tail = val;
+}
 
-  public int get(int index){/*complete this*/}
+  public int get(int index){
+      LNode curr = head;
+      if(size < index){
+	  throw IndexOutOfBoundsException;}     
+ for (int i = 0; i < index;i++){
+	  curr = curr.next;
+}
+      return curr;
+
+
+}
 
   public int set(int index, int value){/*complete this*/}
 
