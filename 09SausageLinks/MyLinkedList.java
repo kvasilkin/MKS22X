@@ -5,7 +5,7 @@ public class MyLinkedList{
     LNode next,prev;
     int value;
     public LNode(int value){
-      this.value=value;
+      this.value = value;
     }
     public String toString(){
       return value+"";
@@ -51,6 +51,8 @@ public class MyLinkedList{
       val.prev = tail;
       tail.next = LNode;
       tail = val;
+      return true;
+
 }
 
   public int get(int index){
@@ -65,11 +67,40 @@ public class MyLinkedList{
 
 }
 
-  public int set(int index, int value){/*complete this*/}
+  public int set(int index, int value){
+      LNode input = new LNode;
+      input.value = value;
+      LNode iter = head;
+      for (int i = 0; i < index; i++ ){
+	  iter = iter.next;
+      }
+      iter.value = value;
 
-  public int indexOf(int value){/*complete this*/}
+}
 
-  public int remove(int index){/*complete this*/}
+  public int indexOf(int value){
+      LNode iter = start;
+      for (int i = 0; i < size; i++){
+	  if (iter.value == value){
+	      return i;
+	  }
+	  else{return -1;}
+}
+
+}
+
+  public int remove(int index){
+      LNode iter = start;
+      for (int i = 0; i < index; i++){
+	  iter = iter.next;
+}
+      LNode prevy = iter.prev;
+      LNode nexty = iter.next;
+      prevy.next = nexty;
+      nexty.prev = prevy;
+      return iter.value;
+
+}
 
   public void add(int index,int value){/*complete this*/}
 
