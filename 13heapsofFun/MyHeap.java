@@ -38,8 +38,11 @@ dir = in;
 }
 
     //Private methods:
-    //possibly swap
+
     public  void pushUp(int ind){
+	if(holder.get(ind / 2) < holder.get(ind)){
+	    swap(ind, ind/2);
+}
 
 }
 
