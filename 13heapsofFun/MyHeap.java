@@ -42,7 +42,7 @@ dir = in;
     public  void pushUp(int ind){
 	if(holder.get(ind / 2) < holder.get(ind)){
 	    swap(ind, ind/2);
-}
+		pushUp(ind/2);}
 
 }
 
