@@ -1,13 +1,13 @@
-Public Class MyHeap{
-    public static ArrayList<String> holder;
+import java.util.*;
+public class MyHeap{
+    public static ArrayList<Integer> holder  =  new ArrayList<Integer>();
     public static boolean dir; 
     public MyHeap(){
-holder =  new ArrayList<String>();
 dir = true;
 }
     // - construct empty max heap
     public  MyHeap(boolean in){
-holder =  new ArrayList<String>();
+
 dir = in;
 }
     // - true: construct empty max heap, false: construct empty min heap.
@@ -15,17 +15,17 @@ dir = in;
 
 
 
-    public void add(String s){
+    public void add(int  s){
 	int n = holder.size();
 	holder.add(n, s);
 	pushUp(n);
 
 }
 
-    public  String remove(){
+    public  int  remove(){
     
 	int n =    holder.size();    
-	String	result = holder.get(1);
+	int result = holder.get(1);
 	swap(1, n);
 	holder.remove(n);
 	pushDown(1);   
@@ -33,20 +33,52 @@ dir = in;
 
 }
 
-    public String peek(){
+    public int  peek(){
 	return holder.get(1);
 }
 
     //Private methods:
 
     public  void pushUp(int ind){
+	if(dir){
+
 	if(holder.get(ind / 2) < holder.get(ind)){
 	    swap(ind, ind/2);
-		pushUp(ind/2);}
+		pushUp(ind/2);
+	}
+	}
+	else
+{	if(holder.get(ind / 2) > holder.get(ind)){
+		swap(ind, ind/2);
+		pushUp(ind/2);
+}
+}
+}
+
+public void pushDown(int ind){
+if(dir){
+	if(holder.get(ind * 2) < holder.get(ind)){
+	    swap(ind, ind * 2);
+		pushDown(ind * 2);
+
+	if(holder.get(ind * 2 + 1) < holder.get(ind)){
+	    swap(ind, ind * 2 + 1);
+		pushDown(ind * 2 + 1);
 
 }
 
-public void pushDown(int ind){}
+	else{	if(holder.get(ind * 2) > holder.get(ind)){
+		swap(ind, ind * 2);
+		pushDown(ind * 2);
+}
+	if(holder.get(ind * 2 + 1 ) > holder.get(ind)){
+		swap(ind, ind * 2 + 1);
+		pushDown(ind * 2 + 1 );
+}
+}
+}
+}
+
 
 
 public void swap(int first, int second){
@@ -55,4 +87,11 @@ public void swap(int first, int second){
     holder.set(second, temp);
 
 }
+
+public static void main(String[] args){
+
+
+
+}
+
 }
