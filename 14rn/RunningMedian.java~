@@ -1,0 +1,11 @@
+public class RunningMedian{
+
+
+
+
+public void add(int) //- insert the value into the heap.
+   public  double getMedian()//  - return the median (do not remove anything)
+
+
+    RunningMedian() // - make an empty running median.
+    }
