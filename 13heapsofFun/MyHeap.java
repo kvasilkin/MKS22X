@@ -1,6 +1,6 @@
 import java.util.*;
 public class MyHeap{
-    public static ArrayList<Integer> holder  =  new ArrayList<Integer>();
+    public static ArrayList<String> holder  =  new ArrayList<String>();
     public static boolean dir; 
     public MyHeap(){
 dir = true;
@@ -15,17 +15,17 @@ dir = in;
 
 
 
-    public void add(int  s){
+    public void add(String  s){
 	int n = holder.size();
 	holder.add(n, s);
 	pushUp(n);
 
 }
 
-    public  int  remove(){
+    public  String  remove(){
     
 	int n =    holder.size();    
-	int result = holder.get(1);
+	String result = holder.get(1);
 	swap(1, n);
 	holder.remove(n);
 	pushDown(1);   
@@ -33,22 +33,23 @@ dir = in;
 
 }
 
-    public int  peek(){
+    public String  peek(){
 	return holder.get(1);
 }
 
     //Private methods:
 
     public  void pushUp(int ind){
+
 	if(dir){
 
-	if(holder.get(ind / 2) < holder.get(ind)){
+	    if(holder.get(ind / 2).compareTo( holder.get(ind)) < 0  ){
 	    swap(ind, ind/2);
 		pushUp(ind/2);
 	}
 	}
 	else
-{	if(holder.get(ind / 2) > holder.get(ind)){
+	    {	if(holder.get(ind / 2).compareTo( holder.get(ind)) > 0){
 		swap(ind, ind/2);
 		pushUp(ind/2);
 }
@@ -57,33 +58,33 @@ dir = in;
 
 public void pushDown(int ind){
 if(dir){
-	if(holder.get(ind * 2) < holder.get(ind)){
+    if(holder.get(ind * 2).compareTo( holder.get(ind)) < 0){
 	    swap(ind, ind * 2);
 		pushDown(ind * 2);
 
-	if(holder.get(ind * 2 + 1) < holder.get(ind)){
+		if(holder.get(ind * 2 + 1).compareTo(holder.get(ind)) < 0){
 	    swap(ind, ind * 2 + 1);
 		pushDown(ind * 2 + 1);
 
 }
 
-	else{	if(holder.get(ind * 2) > holder.get(ind)){
+		else{	if(holder.get(ind * 2).compareTo(holder.get(ind)) > 0){
 		swap(ind, ind * 2);
 		pushDown(ind * 2);
 }
-	if(holder.get(ind * 2 + 1 ) > holder.get(ind)){
+		    if(holder.get(ind * 2 + 1 ).compareTo(holder.get(ind)) > 0){
 		swap(ind, ind * 2 + 1);
 		pushDown(ind * 2 + 1 );
 }
 }
-}
-}
+    }}}
+
 
 
 
 public void swap(int first, int second){
-    int temp = holder.get(first);
-    holder.set(first, second);
+    String temp = holder.get(first);
+    holder.set(first, holder.get(second));
     holder.set(second, temp);
 
 }
